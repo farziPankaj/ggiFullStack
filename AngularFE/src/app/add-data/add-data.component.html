@@ -1,0 +1,66 @@
+<div class="form-container">
+    <form [formGroup]="enrollmentForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" type="email">
+        </mat-form-field>
+      
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput formControlName="mobileNumber" type="tel">
+        </mat-form-field>
+
+        <div class="radio-group-container">
+          <label>Status:</label>
+          <mat-radio-group formControlName="status">
+            <mat-radio-button value="Active">Active</mat-radio-button>
+            <mat-radio-button value="Inactive">Inactive</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <div class="radio-group-container">
+          <label>Batch:</label>
+          <mat-radio-group formControlName="batch">
+            <mat-radio-button value=1>1</mat-radio-button>
+            <mat-radio-button value=2>2</mat-radio-button>
+            <mat-radio-button value=3>3</mat-radio-button>
+            <mat-radio-button value=4>4</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <div class="radio-group-container">
+            <label>Gender:</label>
+            <mat-radio-group formControlName="gender">
+              <mat-radio-button value="Male">Male</mat-radio-button>
+              <mat-radio-button value="Female">Female</mat-radio-button>
+              <mat-radio-button value="Other">Other</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    
+        <mat-form-field appearance="fill" class="example-form-field">
+            <mat-label>Date of Enrollment</mat-label>
+            <input matInput [matDatepicker]="datepicker" formControlName="enrollmentDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker>
+              <mat-datepicker-actions>
+                <button mat-button matDatepickerCancel>Cancel</button>
+                <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+              </mat-datepicker-actions>
+            </mat-datepicker>
+          </mat-form-field>
+        
+        <div class="formButton">
+            <button mat-raised-button color="primary" type="button" (click)="reset()">Reset</button>
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </div>
+      
+      </form>
+      
+</div>

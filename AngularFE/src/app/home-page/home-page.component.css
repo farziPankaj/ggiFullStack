@@ -1,0 +1,31 @@
+table {
+    padding-left: 10px;
+}
+
+table th, tr, td {
+    cursor:pointer
+}
+
+.mat-row:hover {
+    background-color: black;
+    cursor:pointer;
+}
+
+
+.table-container {
+    flex: 1;
+    min-width: 768px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-elevation-z8 {
+    flex: 1;
+    width: 100%;
+    overflow-x: auto;
+}
+
+mat-paginator {
+    width: 100%;
+    overflow-x: auto;
+}

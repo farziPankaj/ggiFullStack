@@ -1,0 +1,62 @@
+<div class="table-container">
+  <div class="mat-elevation-z8" >
+      <table mat-table [dataSource]="dataSource">
+        
+        <ng-container matColumnDef="serialNumber">
+          <th mat-header-cell *matHeaderCellDef> Sr. No. </th>
+          <td mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="batch">
+          <th mat-header-cell *matHeaderCellDef> Batch </th>
+          <td mat-cell *matCellDef="let element"> {{element.batch}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef> Gender </th>
+          <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+        </ng-container>
+    
+        
+        <ng-container matColumnDef="mobileNumber">
+          <th mat-header-cell *matHeaderCellDef> Mobile Number </th>
+          <td mat-cell *matCellDef="let element"> {{element.mobileNumber}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dateOfEnrollment">
+          <th mat-header-cell *matHeaderCellDef> Date of Enrollment </th>
+          <td mat-cell *matCellDef="let element"> {{element.enrollmentDate}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+      <mat-paginator  
+      (page)="handlePageEvent($event)" 
+      [length]="length"
+      [pageSize]="10"
+      [pageSizeOptions]="[10, 25, 50, 100]"
+      showFirstLastButtons
+      aria-label="Select page">
+    </mat-paginator>
+  </div>
+</div>
+  
